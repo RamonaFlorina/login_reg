@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        {% load static %}
+        <title>Registration | Login</title>
+
+    </head>
+    <body>
+        <div class="container mt-5"><!-- div container -->
+            <div class="row">
+<!-- ***********************************       REGISTRATION      *********************************** -->
+                <div class="col-4">
+                    <h1 class="mb-3"><u>Register</u></h1>
+                    <form action="/success/" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" name="first_name"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Last Name</label>
+                            <input type="text" name="last_name"class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password"class="form-control">
+                        </div>
+                        <p class="text-info">*Password should be at least 8 characters</p>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password</label>
+                            <input type="password" name="confirm_password" class="form-control">
+                        </div>
+                            <button type="submit" class="btn btn-outline-dark">Register</button>
+                        </div>
+                    </form>
+                </div><!-- end Registration  -->
+                <div class="col-2">
+                </div>
+<!-- **************************************       LOGIN       ************************************** -->
+                <div class="col-4">
+                    <h1 class="mb-3"><u>Login</u></h1>
+                    <form action='/success/' method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-dark">Login</button>
+                        </div>
+                    </form>
+                </div><!-- end login -->
+            </div><!-- end div row -->
+        </div><!-- end div container -->
+    </body>
+</html>
