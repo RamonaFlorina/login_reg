@@ -16,7 +16,7 @@
 <!-- ***********************************       REGISTRATION      *********************************** -->
                 <div class="col-4">
                     <h1 class="mb-3"><u>Register</u></h1>
-                    <form action="/success/" method="POST">
+                    <form action="/register/" method="POST">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="name">First Name</label>
@@ -44,11 +44,20 @@
                         </div>
                     </form>
                 </div><!-- end Registration  -->
-                
+<!-- **************************************       ERRORS       ************************************** -->
+                <div class="col-2">
+                {% if messages %}
+                    <ul class="messages text-danger">
+                        {% for message in messages %}
+                            <li class="{{ message.tags }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </div>
 <!-- **************************************       LOGIN       ************************************** -->
                 <div class="col-4">
                     <h1 class="mb-3"><u>Login</u></h1>
-                    <form action='/success/' method="POST">
+                    <form action='/login/' method="POST">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="email">Email</label>
